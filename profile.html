@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#234737">
+  <title>Profile &amp; preferences — Daymark</title>
+  <link rel="icon" href="daymark-icon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css">
+  <script src="client.js" defer></script><script src="app.js" defer></script><script src="pages.js" defer></script>
+</head>
+<body data-page="profile">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="app-brand" href="dashboard.html"><span>✳</span>daymark<small>YOUR DAY, AT YOUR PACE</small></a>
+      <p class="nav-caption">YOUR SPACE</p>
+      <nav class="app-nav" aria-label="Main navigation"><a href="dashboard.html">◷ <span>Today</span></a><a href="planner.html">▦ <span>Planner</span></a><a href="insights.html">▥ <span>Insights</span></a><a href="journal.html">▤ <span>My journal</span></a></nav>
+      <div class="sidebar-note"><span>✳</span><p>Progress is built one small promise at a time.</p><small>YOU'RE DOING JUST FINE</small></div>
+      <a class="sidebar-profile active" aria-current="page" href="profile.html"><span class="avatar" data-profile-initial>F</span><span><strong data-profile-name>Friend</strong><small>Profile &amp; preferences</small></span><span class="profile-arrow">↗</span></a>
+      <div class="sidebar-foot">Auto-saved on this device</div>
+    </aside>
+    <main class="main-content">
+      <header class="topbar"><div><span class="crumb">YOUR SPACE /</span><strong>Profile</strong></div><div class="topbar-right"><time data-today-date></time><a class="avatar avatar-mini" href="profile.html" data-profile-initial aria-label="Open profile">F</a></div></header>
+      <section class="page-wrap">
+        <div class="page-intro"><div><p class="eyebrow-pill">YOUR SPACE, YOUR WAY</p><h1>Your profile.</h1><p class="subheading">Set a name and preferences that make Daymark feel more like yours.</p></div></div>
+        <div class="profile-layout">
+          <section class="profile-card">
+            <div class="profile-card-head"><span class="profile-large-avatar" data-profile-initial>F</span><div><span class="eyebrow-pill">YOUR DISPLAY NAME</span><h2 data-profile-heading>Friend</h2><p>This name is saved in this browser.</p></div></div>
+            <form data-profile-form><label for="profile-name">What should Daymark call you?</label><input id="profile-name" name="name" maxlength="60" autocomplete="nickname" required><div class="form-error" data-profile-error role="alert" hidden></div><button type="submit" class="button button-primary">Save name</button></form>
+          </section>
+          <section class="profile-card preferences-card">
+            <div><span class="eyebrow-pill">YOUR PERSONAL RHYTHM</span><h2>When does focus feel easier?</h2><p class="muted-copy">This is only a starting point. Daymark can also notice patterns in your own completed tasks.</p></div>
+            <form data-preferences-form><label for="focus-window">My preferred focus window</label><select id="focus-window" name="focus_window"><option value="flexible">It changes day to day</option><option value="morning">Earlier in the day</option><option value="midday">Around midday</option><option value="evening">Later in the day</option></select><div class="form-row"><div><label for="wake-time">Usual wake-up time <small>(optional)</small></label><input id="wake-time" type="time" name="wake_time"></div><div><label for="bed-time">Usual bedtime <small>(optional)</small></label><input id="bed-time" type="time" name="bed_time"></div></div><div class="form-error" data-preferences-error role="alert" hidden></div><button type="submit" class="button button-primary">Save my preferences</button><p class="field-note">Suggestions are optional and based on your choices and activity. They are not medical or scientific advice.</p></form>
+          </section>
+          <section class="profile-card local-data-card">
+            <span class="eyebrow-pill">YOUR SAVED PLANS</span><h2>Saved in this browser.</h2>
+            <p class="muted-copy">Your schedule, journal, and preferences save automatically on this device. They remain when you leave and return using the same browser and Daymark website address. They do not sync to another device. Clearing browser site data may erase them.</p>
+            <div class="local-data-actions"><button class="button button-secondary" type="button" data-export-data>Download a backup</button><label class="button button-secondary" for="backup-file">Restore a backup</label><input id="backup-file" type="file" accept=".json,application/json" data-import-backup hidden><button class="button button-danger" type="button" data-clear-data>Clear all saved Daymark data</button></div>
+          </section>
+        </div>
+      </section>
+      <footer class="app-footer"><span>Make room for what matters.</span><span>DAYMARK <i>•</i> PROFILE &amp; PREFERENCES</span></footer>
+    </main>
+  </div>
+  <div class="toast-region" data-toast-region role="status" aria-live="polite"></div>
+</body>
+</html>
